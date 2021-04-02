@@ -1,0 +1,4 @@
+---
+grafana_api_url: "http://10.0.0.10"
+grafana_security.admin_user: "admin"
+grafana_security.admin_password: "admin"
