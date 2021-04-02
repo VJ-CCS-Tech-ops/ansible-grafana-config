@@ -13,7 +13,7 @@
     password: "{{ grafana_security_admin_password }}"
     force_basic_auth: true
     return_content: true
-  # no_log: false
+  no_log: false
   register: existing_api_keys
 
 - name: Create grafana api keys
@@ -26,7 +26,7 @@
     body_format: json
     body: "{{ item | to_json }}"
   with_items: "{{ grafana_api_keys }}"
-  # no_log: true
+  no_log: true
   when: ((existing_api_keys['json'] | selectattr("name", "equalto", item['name'])) | list) | length == 0
   register: new_api_keys
 
