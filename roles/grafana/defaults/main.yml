@@ -11,8 +11,8 @@ grafana_api_keys: []
 grafana_api_keys_dir: "{{ lookup('env', 'HOME') }}/grafana/keys"
 
 grafana_api_url: "http://10.0.0.10"
-grafana_security.admin_user: "admin"
-grafana_security.admin_password: "admin"
+grafana_security_admin_user: "admin"
+grafana_security_admin_password: "admin"
 
 grafana_logs_dir: "/var/log/grafana"
 grafana_data_dir: "/var/lib/grafana"
