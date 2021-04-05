@@ -13,6 +13,23 @@
     group: root
   notify: systemd_reload
 
+- name: Create postgres datasource
+  community.grafana.grafana_datasource:
+    name: "datasource-postgres"
+    grafana_url: "{{ grafana_api_url }}"
+    grafana_user: "{{ grafana_security_admin_user }}"
+    grafana_password: "{{ grafana_security_admin_password }}"
+    org_id: "1"
+    ds_type: "postgres"
+    ds_url: "postgres.company.com:5432"
+    database: "db"
+    user: "postgres"
+    sslmode: "verify-full"
+    additional_json_data:
+      postgresVersion: 12
+      timescaledb: false
+    additional_secure_json_data:
+      password: "iampgroot"
 
 # - name: Ensure grafana key directory exists
 #   become: false

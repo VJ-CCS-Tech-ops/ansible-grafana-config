@@ -8,7 +8,6 @@ grafana_api_keys: []
 #    role: "Editor"
 
 # The location where the keys should be stored.
-grafana_api_keys_dir: "{{ lookup('env', 'HOME') }}/grafana/keys"
 
 grafana_api_url: "http://10.0.0.10"
 grafana_security_admin_user: "admin"

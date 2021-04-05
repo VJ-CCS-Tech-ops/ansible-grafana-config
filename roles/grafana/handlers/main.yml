@@ -6,8 +6,6 @@
     state: restarted
   listen: systemd_reload
 
-
-
 - name: Set privileges on provisioned dashboards
   become: true
   file:
