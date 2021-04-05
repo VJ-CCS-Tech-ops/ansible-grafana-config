@@ -4,8 +4,9 @@
   service:
     name: grafana-server
     state: restarted
-  tags:
-    - grafana_run
+  listen: systemd_reload
+
+
 
 - name: Set privileges on provisioned dashboards
   become: true
