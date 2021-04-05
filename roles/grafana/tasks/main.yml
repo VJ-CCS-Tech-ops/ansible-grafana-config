@@ -5,25 +5,6 @@
     name: grafana-server
     state: started
 
-- name: Set privileges on provisioned dashboards
-  become: true
-  file:
-    path: "{{ grafana_data_dir }}/dashboards"
-    recurse: true
-    owner: grafana
-    group: grafana
-    mode: 0640
-  listen: "provisioned dashboards changed"
-
-- name: Set privileges on provisioned dashboards directory
-  become: true
-  file:
-    path: "{{ grafana_data_dir }}/dashboards"
-    state: directory
-    recurse: false
-    mode: 0755
-  listen: "provisioned dashboards changed"
-
 - name: Ensure grafana key directory exists
   become: false
   file:
