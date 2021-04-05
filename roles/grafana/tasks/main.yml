@@ -26,7 +26,7 @@
     body_format: json
     body: "{{ item | to_json }}"
   with_items: "{{ grafana_api_keys }}"
-  no_log: true
+  # no_log: true
   when: ((existing_api_keys['json'] | selectattr("name", "equalto", item['name'])) | list) | length == 0
   register: new_api_keys
 
