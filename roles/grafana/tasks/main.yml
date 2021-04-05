@@ -8,7 +8,7 @@
 - name: Copy systemd grafana configuraiton file
   template:
     src: grafana.ini.j2
-    dest: /etc/systemd/system/vault.service
+    dest: /etc/grafana/grafana.ini
     owner: root
     group: root
   notify: systemd_reload
